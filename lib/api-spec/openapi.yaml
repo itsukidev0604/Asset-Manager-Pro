@@ -1,22 +1,30 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: TRI ANH EDU API specification
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: courses
+    description: Course operations
+  - name: exams
+    description: Exam operations
+  - name: teachers
+    description: Teacher operations
+  - name: blog
+    description: Blog operations
+  - name: stats
+    description: Platform statistics
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,13 +32,495 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /stats:
+    get:
+      operationId: getStats
+      tags: [stats]
+      summary: Get platform statistics
+      responses:
+        "200":
+          description: Platform stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PlatformStats"
+
+  /courses:
+    get:
+      operationId: listCourses
+      tags: [courses]
+      summary: List all courses
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: ["string", "null"]
+        - name: limit
+          in: query
+          schema:
+            type: ["integer", "null"]
+      responses:
+        "200":
+          description: List of courses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Course"
+
+  /courses/{id}:
+    get:
+      operationId: getCourse
+      tags: [courses]
+      summary: Get course by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Course detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CourseDetail"
+        "404":
+          description: Not found
+
+  /exams:
+    get:
+      operationId: listExams
+      tags: [exams]
+      summary: List all exams
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: ["string", "null"]
+        - name: subject
+          in: query
+          schema:
+            type: ["string", "null"]
+        - name: difficulty
+          in: query
+          schema:
+            type: ["string", "null"]
+      responses:
+        "200":
+          description: List of exams
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Exam"
+
+  /exams/{id}:
+    get:
+      operationId: getExam
+      tags: [exams]
+      summary: Get exam by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Exam detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExamDetail"
+        "404":
+          description: Not found
+
+  /teachers:
+    get:
+      operationId: listTeachers
+      tags: [teachers]
+      summary: List all teachers
+      responses:
+        "200":
+          description: List of teachers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Teacher"
+
+  /teachers/{id}:
+    get:
+      operationId: getTeacher
+      tags: [teachers]
+      summary: Get teacher by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Teacher detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeacherDetail"
+        "404":
+          description: Not found
+
+  /blog:
+    get:
+      operationId: listBlogPosts
+      tags: [blog]
+      summary: List blog posts
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: ["string", "null"]
+        - name: limit
+          in: query
+          schema:
+            type: ["integer", "null"]
+      responses:
+        "200":
+          description: List of blog posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/BlogPost"
+
+  /blog/{id}:
+    get:
+      operationId: getBlogPost
+      tags: [blog]
+      summary: Get blog post by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Blog post detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlogPostDetail"
+        "404":
+          description: Not found
+
+  /testimonials:
+    get:
+      operationId: listTestimonials
+      tags: [stats]
+      summary: List student testimonials
+      responses:
+        "200":
+          description: List of testimonials
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testimonial"
+
 components:
   schemas:
     HealthStatus:
       type: object
+      required: [status]
       properties:
         status:
           type: string
-      required:
-        - status
 
+    PlatformStats:
+      type: object
+      required: [students, exams, questions, satisfactionRate]
+      properties:
+        students:
+          type: integer
+        exams:
+          type: integer
+        questions:
+          type: integer
+        satisfactionRate:
+          type: integer
+
+    Course:
+      type: object
+      required: [id, title, teacherName, teacherAvatar, rating, studentsCount, price, category, thumbnail, level]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        teacherName:
+          type: string
+        teacherAvatar:
+          type: string
+        rating:
+          type: number
+        studentsCount:
+          type: integer
+        price:
+          type: integer
+        originalPrice:
+          type: ["integer", "null"]
+        category:
+          type: string
+        thumbnail:
+          type: string
+        level:
+          type: string
+        lessonsCount:
+          type: ["integer", "null"]
+        durationHours:
+          type: ["integer", "null"]
+
+    CourseDetail:
+      type: object
+      required: [id, title, teacherName, teacherAvatar, rating, studentsCount, price, category, thumbnail, level, description, whatYouLearn, curriculum]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        teacherName:
+          type: string
+        teacherAvatar:
+          type: string
+        rating:
+          type: number
+        studentsCount:
+          type: integer
+        price:
+          type: integer
+        originalPrice:
+          type: ["integer", "null"]
+        category:
+          type: string
+        thumbnail:
+          type: string
+        level:
+          type: string
+        description:
+          type: string
+        whatYouLearn:
+          type: array
+          items:
+            type: string
+        curriculum:
+          type: array
+          items:
+            $ref: "#/components/schemas/CurriculumSection"
+        lessonsCount:
+          type: ["integer", "null"]
+        durationHours:
+          type: ["integer", "null"]
+
+    CurriculumSection:
+      type: object
+      required: [title, lessons]
+      properties:
+        title:
+          type: string
+        lessons:
+          type: array
+          items:
+            type: string
+
+    Exam:
+      type: object
+      required: [id, title, type, subject, difficulty, questionsCount, durationMinutes, attemptCount, isFree]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        type:
+          type: string
+        subject:
+          type: string
+        difficulty:
+          type: string
+        questionsCount:
+          type: integer
+        durationMinutes:
+          type: integer
+        attemptCount:
+          type: integer
+        isFree:
+          type: boolean
+        year:
+          type: ["integer", "null"]
+
+    ExamDetail:
+      type: object
+      required: [id, title, type, subject, difficulty, questionsCount, durationMinutes, attemptCount, isFree, description, questions]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        type:
+          type: string
+        subject:
+          type: string
+        difficulty:
+          type: string
+        questionsCount:
+          type: integer
+        durationMinutes:
+          type: integer
+        attemptCount:
+          type: integer
+        isFree:
+          type: boolean
+        description:
+          type: string
+        year:
+          type: ["integer", "null"]
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Question"
+
+    Question:
+      type: object
+      required: [id, text, options, correctOptionIndex]
+      properties:
+        id:
+          type: integer
+        text:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+        correctOptionIndex:
+          type: integer
+        explanation:
+          type: ["string", "null"]
+
+    Teacher:
+      type: object
+      required: [id, name, avatar, specialization, experienceYears, studentsCount, bio]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        avatar:
+          type: string
+        specialization:
+          type: string
+        experienceYears:
+          type: integer
+        studentsCount:
+          type: integer
+        bio:
+          type: string
+        rating:
+          type: ["number", "null"]
+
+    TeacherDetail:
+      type: object
+      required: [id, name, avatar, specialization, experienceYears, studentsCount, bio, courses]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        avatar:
+          type: string
+        specialization:
+          type: string
+        experienceYears:
+          type: integer
+        studentsCount:
+          type: integer
+        bio:
+          type: string
+        rating:
+          type: ["number", "null"]
+        courses:
+          type: array
+          items:
+            $ref: "#/components/schemas/Course"
+
+    BlogPost:
+      type: object
+      required: [id, title, category, readingTimeMinutes, thumbnail, publishedAt, excerpt]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        category:
+          type: string
+        readingTimeMinutes:
+          type: integer
+        thumbnail:
+          type: string
+        publishedAt:
+          type: string
+        excerpt:
+          type: string
+
+    BlogPostDetail:
+      type: object
+      required: [id, title, category, readingTimeMinutes, thumbnail, publishedAt, excerpt, content, authorName, authorAvatar]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        category:
+          type: string
+        readingTimeMinutes:
+          type: integer
+        thumbnail:
+          type: string
+        publishedAt:
+          type: string
+        excerpt:
+          type: string
+        content:
+          type: string
+        authorName:
+          type: string
+        authorAvatar:
+          type: string
+
+    Testimonial:
+      type: object
+      required: [id, studentName, studentAvatar, score, improvement, testimonialText, examType]
+      properties:
+        id:
+          type: integer
+        studentName:
+          type: string
+        studentAvatar:
+          type: string
+        score:
+          type: integer
+        improvement:
+          type: integer
+        testimonialText:
+          type: string
+        examType:
+          type: string
+        monthsStudied:
+          type: ["integer", "null"]

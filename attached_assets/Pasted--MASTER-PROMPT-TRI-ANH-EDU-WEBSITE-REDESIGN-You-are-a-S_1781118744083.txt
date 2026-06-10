@@ -1,0 +1,519 @@
+# MASTER PROMPT - TRI ANH EDU WEBSITE REDESIGN
+
+You are a Senior Product Designer, Senior UX Designer, and Senior Frontend Architect.
+
+Design a complete modern website for **TRI ANH EDU**, a Vietnamese EdTech platform specializing in **HSA** and **TSA** exam preparation.
+
+The final result must look like a real startup product ready for production, not a template, not a school website, and not a generic LMS.
+
+---
+
+# PROJECT OVERVIEW
+
+TRI ANH EDU helps Vietnamese students prepare for:
+
+### HSA
+
+Đánh giá năng lực ĐHQGHN
+
+### TSA
+
+Đánh giá tư duy Đại học Bách Khoa Hà Nội
+
+The platform provides:
+
+* Online courses
+* Practice questions
+* Mock exams
+* Exam library
+* Learning analytics
+* Teacher interaction
+* Progress tracking
+
+The website must immediately communicate:
+
+> "This is the most professional HSA/TSA preparation platform."
+
+---
+
+# DESIGN GOALS
+
+Create a premium EdTech experience combining:
+
+* Coursera
+* Khan Academy
+* Notion
+* Linear
+* Stripe
+* Modern SaaS products
+
+The result should feel:
+
+* Premium
+* Modern
+* Academic
+* Trustworthy
+* Focused
+* Fast
+* Clean
+
+Avoid:
+
+* Old-school education websites
+* Corporate enterprise design
+* Excessive gradients
+* Excessive animations
+* Gaming UI
+* Childish colors
+
+---
+
+# BRAND SYSTEM
+
+The design must be built around the TRI ANH EDU logo.
+
+Logo colors:
+
+### Brand Orange
+
+```css
+#E85A2A
+```
+
+### Primary Orange
+
+```css
+#F7941D
+```
+
+### Golden Accent
+
+```css
+#F2C230
+```
+
+### Trust Navy
+
+```css
+#102A43
+```
+
+### Warm Background
+
+```css
+#FFFBF5
+```
+
+### Main Text
+
+```css
+#1F2937
+```
+
+---
+
+# COLOR USAGE RULES
+
+### Orange
+
+Use for:
+
+* Primary buttons
+* Active states
+* Highlights
+* CTA sections
+
+### Gold
+
+Use for:
+
+* Achievements
+* Statistics
+* Premium badges
+* Exam results
+
+### Navy
+
+Use for:
+
+* Navigation
+* Footer
+* Section headings
+* Important information
+
+### Warm White
+
+Use as the primary page background.
+
+The website should feel bright and welcoming.
+
+---
+
+# VISUAL STYLE
+
+Use:
+
+* Large spacing
+* Rounded corners
+* Soft shadows
+* Premium typography
+* Subtle motion
+
+Design language:
+
+* Apple
+* Linear
+* Stripe
+* Vercel
+
+NOT:
+
+* Bootstrap
+* Admin dashboard style
+* Generic LMS
+
+---
+
+# TYPOGRAPHY
+
+Font:
+
+Be Vietnam Pro
+
+Hierarchy:
+
+Hero Title:
+64–72px
+
+Section Title:
+40–48px
+
+Card Title:
+20–24px
+
+Body:
+16–18px
+
+High readability is critical.
+
+---
+
+# WEBSITE STRUCTURE
+
+Create all sections below.
+
+---
+
+## SECTION 1 — NAVIGATION
+
+Sticky navigation.
+
+Left:
+
+Logo + TRI ANH EDU
+
+Center:
+
+* Trang chủ
+* Khóa học
+* Đề thi
+* Giáo viên
+* Blog
+* Giới thiệu
+
+Right:
+
+Guest:
+
+* Đăng nhập
+* Đăng ký
+
+User:
+
+* Notifications
+* Avatar menu
+
+Glass effect when scrolling.
+
+---
+
+## SECTION 2 — HERO
+
+Large modern hero.
+
+Headline:
+
+# Chinh Phục HSA & TSA Với Lộ Trình Học Tập Thông Minh
+
+Subheadline:
+
+Học lý thuyết, luyện đề, thi thử và theo dõi tiến độ trên một nền tảng duy nhất.
+
+Buttons:
+
+Primary:
+Bắt đầu học ngay
+
+Secondary:
+Khám phá đề thi
+
+Right side:
+
+Modern educational illustration.
+
+Background contains subtle academic patterns.
+
+---
+
+## SECTION 3 — TRUST METRICS
+
+Animated statistics.
+
+Display:
+
+* 5.000+ học viên
+* 300+ đề thi
+* 10.000+ câu hỏi
+* 95% hài lòng
+
+Premium cards.
+
+---
+
+## SECTION 4 — WHY TRI ANH EDU
+
+6 feature cards.
+
+Features:
+
+* Lộ trình cá nhân hóa
+* Học tập theo tiến độ
+* Kho đề HSA
+* Kho đề TSA
+* Thi thử như thật
+* Thống kê chi tiết
+
+Use beautiful icons.
+
+---
+
+## SECTION 5 — HSA & TSA PROGRAMS
+
+Two large showcase cards.
+
+### HSA
+
+Include:
+
+* Tổng quan kỳ thi
+* Kiến thức trọng tâm
+* Đề luyện tập
+* Thi thử
+
+### TSA
+
+Include:
+
+* Tư duy toán học
+* Đọc hiểu
+* Giải quyết vấn đề
+* Thi thử
+
+Premium design.
+
+---
+
+## SECTION 6 — FEATURED COURSES
+
+Show 6 courses.
+
+Each card:
+
+* Thumbnail
+* Teacher
+* Rating
+* Students
+* Price
+
+Modern hover interaction.
+
+---
+
+## SECTION 7 — ONLINE EXAM PLATFORM
+
+One of the most important sections.
+
+Show realistic mockup of:
+
+* Exam timer
+* Question navigation
+* Multiple choice interface
+* Progress indicator
+
+Features:
+
+* Thi thử online
+* Tự động chấm điểm
+* Xem đáp án
+* Phân tích kết quả
+* Theo dõi tiến độ
+
+CTA:
+
+Làm thử đề miễn phí
+
+---
+
+## SECTION 8 — EXAM LIBRARY
+
+Display exam categories.
+
+HSA:
+
+* Toán
+* Văn
+* Khoa học
+
+TSA:
+
+* Toán
+* Đọc hiểu
+* Tư duy
+
+Show:
+
+* Total exams
+* Difficulty
+* Popularity
+
+Modern filtering interface.
+
+---
+
+## SECTION 9 — TEACHERS
+
+Display 4 teachers.
+
+Each card:
+
+* Avatar
+* Name
+* Specialization
+* Experience
+* Students taught
+
+Premium presentation.
+
+---
+
+## SECTION 10 — TESTIMONIALS
+
+Carousel.
+
+Student stories.
+
+Example:
+
+"HSA tăng từ 78 lên 108 điểm sau 3 tháng."
+
+Focus on outcomes.
+
+---
+
+## SECTION 11 — BLOG
+
+Latest educational articles.
+
+Cards:
+
+* Image
+* Category
+* Reading time
+* Title
+
+---
+
+## SECTION 12 — FINAL CTA
+
+Full-width conversion section.
+
+Headline:
+
+# Sẵn Sàng Chinh Phục Kỳ Thi?
+
+Buttons:
+
+* Đăng ký miễn phí
+* Khám phá khóa học
+
+Use brand gradient.
+
+---
+
+## SECTION 13 — FOOTER
+
+Dark navy footer.
+
+Columns:
+
+### TRI ANH EDU
+
+About platform.
+
+### Khóa học
+
+### Đề thi
+
+### Blog
+
+### Chính sách
+
+### Liên hệ
+
+* Email
+* Hotline
+* Facebook
+
+---
+
+# EXTRA REQUIREMENTS
+
+Design additional pages and ensure visual consistency:
+
+1. Home
+2. Courses
+3. Course Detail
+4. Exam Library
+5. Exam Detail
+6. Online Exam Taking
+7. Exam Result
+8. Teachers
+9. Teacher Detail
+10. Blog
+11. Blog Detail
+12. Login
+13. Register
+14. Forgot Password
+15. Dashboard
+16. Profile
+
+---
+
+# IMPORTANT
+
+The product ONLY focuses on:
+
+* HSA
+* TSA
+
+Never add:
+
+* IELTS
+* TOEIC
+* SAT
+* Coding courses
+* Language learning
+
+Everything should reinforce the identity of a premium HSA/TSA preparation platform for Vietnamese students.
+
+Generate a complete production-ready design system and homepage UI based on these requirements.

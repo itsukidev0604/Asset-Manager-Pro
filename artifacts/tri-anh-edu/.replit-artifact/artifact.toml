@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "TRI ANH EDU"
+version = "1.0.0"
+id = "artifacts/tri-anh-edu"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23633
+
+[services.development]
+run = "pnpm --filter @workspace/tri-anh-edu run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tri-anh-edu", "run", "build" ]
+publicDir = "artifacts/tri-anh-edu/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23633"
+BASE_PATH = "/"
