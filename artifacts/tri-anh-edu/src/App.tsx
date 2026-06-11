@@ -4,8 +4,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { Layout } from "@/components/layout";
+import { AdminLayout } from "@/components/admin/admin-layout";
+import { AdminProvider } from "@/components/admin/admin-context";
 
-// Pages
+// Public pages
 import Home from "@/pages/home";
 import Courses from "@/pages/courses";
 import CourseDetail from "@/pages/courses/detail";
@@ -23,19 +25,66 @@ import ForgotPassword from "@/pages/auth/forgot-password";
 import Dashboard from "@/pages/dashboard";
 import Profile from "@/pages/profile";
 
+// Admin pages
+import AdminOverview from "@/pages/admin/index";
+import AdminCourses from "@/pages/admin/courses";
+import AdminCategories from "@/pages/admin/categories";
+import AdminLessons from "@/pages/admin/lessons";
+import AdminExams from "@/pages/admin/exams";
+import AdminQuestions from "@/pages/admin/questions";
+import AdminResults from "@/pages/admin/results";
+import AdminUsers from "@/pages/admin/users";
+import AdminRoles from "@/pages/admin/roles";
+import AdminReviews from "@/pages/admin/reviews";
+import AdminBlog from "@/pages/admin/blog";
+import AdminBlogCategories from "@/pages/admin/blog-categories";
+import AdminSettings from "@/pages/admin/settings";
+import AdminLogs from "@/pages/admin/logs";
+
 const queryClient = new QueryClient();
+
+function AdminRoutes() {
+  return (
+    <AdminProvider>
+      <AdminLayout>
+        <Switch>
+          <Route path="/admin" component={AdminOverview} />
+          <Route path="/admin/courses" component={AdminCourses} />
+          <Route path="/admin/categories" component={AdminCategories} />
+          <Route path="/admin/lessons" component={AdminLessons} />
+          <Route path="/admin/exams" component={AdminExams} />
+          <Route path="/admin/questions" component={AdminQuestions} />
+          <Route path="/admin/results" component={AdminResults} />
+          <Route path="/admin/users" component={AdminUsers} />
+          <Route path="/admin/roles" component={AdminRoles} />
+          <Route path="/admin/reviews" component={AdminReviews} />
+          <Route path="/admin/blog" component={AdminBlog} />
+          <Route path="/admin/blog-categories" component={AdminBlogCategories} />
+          <Route path="/admin/settings" component={AdminSettings} />
+          <Route path="/admin/logs" component={AdminLogs} />
+          <Route>
+            <AdminOverview />
+          </Route>
+        </Switch>
+      </AdminLayout>
+    </AdminProvider>
+  );
+}
 
 function Router() {
   return (
     <Switch>
-      {/* Auth routes */}
+      {/* Admin routes */}
+      <Route path="/admin/*?" component={AdminRoutes} />
+
+      {/* Auth routes (no layout) */}
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/forgot-password" component={ForgotPassword} />
-      
+
       {/* Exam taking interface (no main layout) */}
       <Route path="/exams/:id/take" component={ExamTake} />
-      
+
       {/* Main layout routes */}
       <Route path="/">
         <Layout><Home /></Layout>
@@ -73,7 +122,7 @@ function Router() {
       <Route path="/profile">
         <Layout><Profile /></Layout>
       </Route>
-      
+
       <Route path="/*">
         <Layout><NotFound /></Layout>
       </Route>

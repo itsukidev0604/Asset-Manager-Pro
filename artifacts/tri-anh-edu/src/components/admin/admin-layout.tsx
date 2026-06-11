@@ -137,27 +137,27 @@ export function AdminLayout({ children }: { children: ReactNode }) {
               const Icon = item.icon;
               const isActive = location === item.href || (item.href !== "/admin" && location.startsWith(item.href));
               return (
-                <Link key={item.href} href={item.href}>
-                  <a
-                    onClick={() => setSidebarOpen(false)}
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setSidebarOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer group",
+                    isActive
+                      ? "bg-white/10 text-white font-medium"
+                      : "text-white/60 hover:text-white hover:bg-white/5"
+                  )}
+                >
+                  <Icon
                     className={cn(
-                      "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer group",
-                      isActive
-                        ? "bg-white/10 text-white font-medium"
-                        : "text-white/60 hover:text-white hover:bg-white/5"
+                      "w-4 h-4 flex-shrink-0 transition-colors",
+                      isActive ? "text-primary-orange" : "text-white/40 group-hover:text-white/70"
                     )}
-                  >
-                    <Icon
-                      className={cn(
-                        "w-4 h-4 flex-shrink-0 transition-colors",
-                        isActive ? "text-primary-orange" : "text-white/40 group-hover:text-white/70"
-                      )}
-                    />
-                    <span className="truncate">{item.label}</span>
-                    {isActive && (
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-orange" />
-                    )}
-                  </a>
+                  />
+                  <span className="truncate">{item.label}</span>
+                  {isActive && (
+                    <div className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-orange" />
+                  )}
                 </Link>
               );
             })}
@@ -190,10 +190,8 @@ export function AdminLayout({ children }: { children: ReactNode }) {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
-                <Link href="/">
-                  <a className="flex items-center text-destructive">
-                    <LogOut className="w-3.5 h-3.5 mr-2" /> Về trang chủ
-                  </a>
+                <Link href="/" className="flex items-center text-destructive">
+                  <LogOut className="w-3.5 h-3.5 mr-2" /> Về trang chủ
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -295,10 +293,8 @@ export function AdminLayout({ children }: { children: ReactNode }) {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
-                <Link href="/">
-                  <a className="flex items-center text-destructive">
-                    <LogOut className="w-3.5 h-3.5 mr-2" /> Thoát
-                  </a>
+                <Link href="/" className="flex items-center text-destructive">
+                  <LogOut className="w-3.5 h-3.5 mr-2" /> Thoát
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
