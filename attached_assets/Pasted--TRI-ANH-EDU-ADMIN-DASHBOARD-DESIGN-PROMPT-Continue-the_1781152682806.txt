@@ -1,0 +1,638 @@
+# TRI ANH EDU - ADMIN DASHBOARD DESIGN PROMPT
+
+Continue the existing TRI ANH EDU design system.
+
+DO NOT redesign the brand.
+
+Reuse:
+
+* Typography
+* Color system
+* Spacing
+* Shadows
+* Components
+* Design language
+
+from the existing TRI ANH EDU public website.
+
+The admin panel must feel like part of the same product ecosystem.
+
+---
+
+# PRODUCT CONTEXT
+
+TRI ANH EDU is an online education platform focused on:
+
+* HSA
+* TSA
+
+The admin dashboard is used by:
+
+* Admin
+* Teacher
+
+Roles:
+
+## Admin
+
+Full access.
+
+## Teacher
+
+Limited access.
+
+Teachers cannot:
+
+* Manage users
+* Manage roles
+* View system settings
+
+---
+
+# DESIGN STYLE
+
+Create a modern dashboard inspired by:
+
+* Linear
+* Stripe Dashboard
+* Notion
+* Vercel Dashboard
+* Clerk Dashboard
+
+Avoid:
+
+* Bootstrap Admin Templates
+* AdminLTE
+* Metronic style
+* Legacy dashboards
+
+The UI must feel:
+
+* Premium
+* Fast
+* Minimal
+* Modern SaaS
+
+---
+
+# BRAND COLORS
+
+Use existing TRI ANH EDU design system.
+
+Primary Orange
+
+#F7941D
+
+Brand Orange
+
+#E85A2A
+
+Gold Accent
+
+#F2C230
+
+Trust Navy
+
+#102A43
+
+Background
+
+#FFFBF5
+
+Cards
+
+#FFFFFF
+
+Text
+
+#1F2937
+
+---
+
+# LAYOUT
+
+## Desktop
+
+Sidebar Left
+
+Top Navigation
+
+Content Area
+
+---
+
+# SIDEBAR
+
+Logo:
+
+TRI ANH EDU
+
+Navigation Groups
+
+## Dashboard
+
+* Tổng quan
+
+---
+
+## Học tập
+
+* Khóa học
+* Danh mục khóa học
+* Chương học
+* Bài học
+
+---
+
+## Đề thi
+
+* Đề thi
+* Bộ câu hỏi
+* Kết quả thi
+
+---
+
+## Người dùng
+
+(Admin Only)
+
+* Người dùng
+* Phân quyền
+
+---
+
+## Đánh giá
+
+* Đánh giá khóa học
+
+---
+
+## Nội dung
+
+* Blog
+* Danh mục Blog
+
+---
+
+## Hệ thống
+
+(Admin Only)
+
+* Cài đặt
+* Nhật ký hệ thống
+
+---
+
+Bottom:
+
+User Profile Card
+
+* Avatar
+* Name
+* Role
+
+Logout Button
+
+---
+
+# TOPBAR
+
+Left
+
+Page title
+
+Breadcrumb
+
+Right
+
+Search
+
+Notifications
+
+Dark mode switch
+
+Profile menu
+
+---
+
+# DASHBOARD OVERVIEW
+
+Build a modern dashboard homepage.
+
+---
+
+## KPI Cards
+
+Display:
+
+* Tổng học viên
+* Tổng khóa học
+* Tổng đề thi
+* Tổng doanh thu
+
+Animated numbers.
+
+Premium cards.
+
+---
+
+## Enrollment Chart
+
+Show:
+
+Enrollment growth over time.
+
+Use modern chart.
+
+---
+
+## Revenue Chart
+
+Show:
+
+Monthly revenue.
+
+---
+
+## Exam Statistics
+
+Show:
+
+* HSA attempts
+* TSA attempts
+* Average score
+* Completion rate
+
+---
+
+## Recent Activities
+
+Timeline component.
+
+Examples:
+
+* User enrolled
+* Exam completed
+* Course published
+* Review submitted
+
+---
+
+# USER MANAGEMENT
+
+Admin only.
+
+Page:
+
+/admin/users
+
+Features:
+
+* Search
+* Filter
+* Pagination
+* View details
+
+Columns:
+
+* Avatar
+* Name
+* Email
+* Role
+* Status
+* Created Date
+* Actions
+
+Actions:
+
+* View
+* Edit
+* Ban
+* Unban
+* Change Role
+
+Modern data table.
+
+---
+
+# USER DETAIL
+
+Display:
+
+Personal information
+
+Learning statistics
+
+Enrollments
+
+Exam history
+
+Reviews
+
+Sessions
+
+Ban status
+
+---
+
+# COURSE MANAGEMENT
+
+Page:
+
+/admin/courses
+
+Features:
+
+* Create
+* Edit
+* Delete
+* Publish
+* Archive
+
+Columns:
+
+* Thumbnail
+* Title
+* Category
+* Teacher
+* Students
+* Status
+
+---
+
+# COURSE EDITOR
+
+Multi-section editor.
+
+Sections:
+
+Basic Information
+
+Thumbnail
+
+Category
+
+Description
+
+Requirements
+
+Target Students
+
+Pricing
+
+Teacher Assignment
+
+Publishing Settings
+
+Preview
+
+---
+
+# CATEGORY MANAGEMENT
+
+Page:
+
+/admin/categories
+
+Simple CRUD.
+
+Display:
+
+* Name
+* Slug
+* Courses Count
+* Status
+
+---
+
+# LESSON MANAGEMENT
+
+Nested structure.
+
+Course
+
+→ Chapter
+
+→ Lesson
+
+Support:
+
+* Video lesson
+* Text lesson
+* Quiz lesson
+
+Drag & Drop ordering.
+
+---
+
+# EXAM MANAGEMENT
+
+Page:
+
+/admin/exams
+
+Display:
+
+* Title
+* Type (HSA/TSA)
+* Duration
+* Questions
+* Status
+
+Actions:
+
+* Create
+* Edit
+* Publish
+* Duplicate
+* Delete
+
+---
+
+# QUESTION BANK
+
+One of the most important pages.
+
+Filters:
+
+* HSA
+
+* TSA
+
+* Subject
+
+* Difficulty
+
+* Topic
+
+Question Types:
+
+* Single Choice
+* Multiple Choice
+
+Features:
+
+* Bulk import
+* Bulk export
+* Search
+* Preview
+
+---
+
+# EXAM RESULT ANALYTICS
+
+Charts:
+
+Average Score
+
+Completion Rate
+
+Question Difficulty
+
+Top Performing Students
+
+Weak Topics
+
+---
+
+# REVIEW MANAGEMENT
+
+Display:
+
+* User
+* Course
+* Rating
+* Comment
+* Created Date
+
+Actions:
+
+* Hide
+* Approve
+* Delete
+
+---
+
+# BLOG MANAGEMENT
+
+Features:
+
+* Create article
+* Edit article
+* Publish article
+* Draft article
+
+Editor:
+
+Rich text editor
+
+SEO fields
+
+Thumbnail
+
+Tags
+
+Slug
+
+---
+
+# SETTINGS
+
+Admin only.
+
+Sections:
+
+General
+
+Email
+
+Cloudinary
+
+Authentication
+
+Exam Configuration
+
+Maintenance Mode
+
+---
+
+# ROLE MANAGEMENT
+
+Admin only.
+
+Roles:
+
+* Admin
+* Teacher
+* Student
+
+Permission matrix UI.
+
+Modern toggle interface.
+
+---
+
+# SYSTEM LOGS
+
+Display:
+
+* Action
+* User
+* Timestamp
+* IP Address
+
+Filters:
+
+* User
+* Date
+* Action
+
+---
+
+# COMPONENTS
+
+Build reusable components:
+
+* DataTable
+* PageHeader
+* DashboardCard
+* StatCard
+* SearchInput
+* FilterPanel
+* EmptyState
+* ConfirmDialog
+* Drawer
+* Sheet
+* FormSection
+* ChartCard
+
+---
+
+# UX REQUIREMENTS
+
+Use:
+
+* Skeleton loading
+* Empty states
+* Error states
+* Confirmation dialogs
+* Toast notifications
+
+Every page must be production-ready.
+
+---
+
+# IMPORTANT
+
+The dashboard manages:
+
+* Courses
+* Categories
+* Lessons
+* Exams
+* Question Bank
+* Blogs
+* Users
+* Reviews
+
+Everything must remain consistent with the TRI ANH EDU public website design system and brand identity.
