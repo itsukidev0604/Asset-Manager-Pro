@@ -25,6 +25,10 @@ import ForgotPassword from "@/pages/auth/forgot-password";
 import Dashboard from "@/pages/dashboard";
 import Profile from "@/pages/profile";
 
+// Classroom pages (student)
+import MyClassrooms from "@/pages/classrooms/index";
+import ClassroomDetail from "@/pages/classrooms/detail";
+
 // Admin pages
 import AdminOverview from "@/pages/admin/index";
 import AdminCourses from "@/pages/admin/courses";
@@ -40,6 +44,10 @@ import AdminBlog from "@/pages/admin/blog";
 import AdminBlogCategories from "@/pages/admin/blog-categories";
 import AdminSettings from "@/pages/admin/settings";
 import AdminLogs from "@/pages/admin/logs";
+import AdminClassrooms from "@/pages/admin/classrooms";
+import AdminClassroomsCreate from "@/pages/admin/classrooms-create";
+import AdminClassroomsDetail from "@/pages/admin/classrooms-detail";
+import AdminEnrollmentQueue from "@/pages/admin/enrollment-queue";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +70,10 @@ function AdminRoutes() {
           <Route path="/admin/blog-categories" component={AdminBlogCategories} />
           <Route path="/admin/settings" component={AdminSettings} />
           <Route path="/admin/logs" component={AdminLogs} />
+          <Route path="/admin/classrooms/create" component={AdminClassroomsCreate} />
+          <Route path="/admin/classrooms/:id" component={AdminClassroomsDetail} />
+          <Route path="/admin/classrooms" component={AdminClassrooms} />
+          <Route path="/admin/enrollment-queue" component={AdminEnrollmentQueue} />
           <Route>
             <AdminOverview />
           </Route>
@@ -115,6 +127,12 @@ function Router() {
       </Route>
       <Route path="/blog/:id">
         <Layout><BlogDetail /></Layout>
+      </Route>
+      <Route path="/classrooms/:id">
+        <Layout><ClassroomDetail /></Layout>
+      </Route>
+      <Route path="/classrooms">
+        <Layout><MyClassrooms /></Layout>
       </Route>
       <Route path="/dashboard">
         <Layout><Dashboard /></Layout>

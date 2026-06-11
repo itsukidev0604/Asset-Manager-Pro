@@ -1,0 +1,421 @@
+You are a Senior Product Designer and Frontend Architect.
+
+Design a complete Classroom Management UI for TRI ANH EDU, an online/offline education platform focused on HSA and TSA exam preparation.
+
+The design must be production-ready, modern, highly usable, responsive, and consistent with the existing design system.
+
+==================================================
+BRAND & DESIGN SYSTEM
+==================================================
+
+Use the following visual identity:
+
+Primary Brand:
+- Vibrant Orange (#F97316 equivalent)
+- Used for CTA buttons, highlights, active navigation, badges
+
+Secondary:
+- Navy / Slate
+- Used for text, footer, admin navigation
+
+Background:
+- Warm off-white
+- Soft educational feeling
+
+Success:
+- Green
+
+Info:
+- Blue
+
+Design Language:
+- Modern EdTech
+- Clean spacing
+- Rounded corners (12px+)
+- Soft shadows
+- Glass effects when appropriate
+- Premium but approachable
+- Similar quality to Coursera, ClassCentral, Udemy Business, Notion
+
+Typography:
+- Be Vietnam Pro
+- Inter
+
+Target users:
+- Students
+- Teachers
+- Administrators
+
+Platform:
+- React + TypeScript
+- TailwindCSS
+- Desktop first
+- Fully responsive
+
+==================================================
+MODULE: CLASSROOM
+==================================================
+
+A Course can have multiple Classrooms.
+
+Example:
+
+HSA 2027
+├── HSA 2027 Morning
+├── HSA 2027 Evening
+└── HSA 2027 Weekend
+
+Students enroll into Courses.
+
+Admins assign students into Classrooms manually.
+
+==================================================
+PART 1 - STUDENT CLASSROOM UI
+==================================================
+
+Create a complete Student Classroom Experience.
+
+==================================================
+PAGE:
+My Classrooms
+==================================================
+
+Display:
+
+- Classroom cards
+- Course thumbnail
+- Classroom name
+- Teacher name
+- Number of students
+- Progress %
+- Schedule
+- Next lesson date
+
+Status badges:
+
+- Waiting Assignment
+- Active
+- Completed
+
+Card actions:
+
+- Enter Classroom
+- View Details
+
+Empty state:
+No classroom assigned yet
+
+==================================================
+PAGE:
+Classroom Detail
+==================================================
+
+Header:
+
+- Classroom name
+- Course name
+- Teacher
+- Schedule
+- Room / Online
+- Student count
+
+Tabs:
+
+1. Overview
+2. Lessons
+3. Materials
+4. Announcements
+5. Members
+
+==================================================
+OVERVIEW TAB
+==================================================
+
+Show:
+
+- Teacher information
+- Progress
+- Upcoming lesson
+- Recent announcements
+- Quick access resources
+
+==================================================
+LESSONS TAB
+==================================================
+
+Lesson timeline:
+
+- Lesson title
+- Lesson status
+
+Status:
+- Completed
+- Current
+- Locked
+
+Actions:
+
+- Watch recording
+- View lesson
+
+==================================================
+MATERIALS TAB
+==================================================
+
+Display resources:
+
+- PDF
+- Slide
+- Practice Exam
+- Assignment
+
+Actions:
+
+- Download
+- View
+
+==================================================
+ANNOUNCEMENTS TAB
+==================================================
+
+Announcement feed similar to classroom LMS.
+
+Display:
+
+- Teacher avatar
+- Time
+- Content
+- Attachments
+
+==================================================
+MEMBERS TAB
+==================================================
+
+Display:
+
+Teacher section
+
+Student section
+
+Show:
+
+- Avatar
+- Name
+- Role
+
+==================================================
+PART 2 - ADMIN CLASSROOM MANAGEMENT
+==================================================
+
+Create a complete Admin Classroom Management dashboard.
+
+==================================================
+PAGE:
+Classroom List
+==================================================
+
+Table view
+
+Columns:
+
+- Classroom
+- Course
+- Teacher
+- Students
+- Capacity
+- Schedule
+- Start Date
+- Status
+
+Filters:
+
+- Course
+- Teacher
+- Active
+- Completed
+
+Actions:
+
+- View
+- Edit
+- Assign Students
+- Archive
+
+Top actions:
+
++ Create Classroom
+
+==================================================
+PAGE:
+Create Classroom
+==================================================
+
+Form:
+
+Classroom Name
+Course
+Teacher
+Max Students
+Start Date
+End Date
+Room
+Schedule
+Online / Offline
+
+Preview card on right side
+
+==================================================
+PAGE:
+Enrollment Queue
+==================================================
+
+Critical feature.
+
+Display students waiting for classroom assignment.
+
+Columns:
+
+Student
+Course
+Enroll Date
+Status
+
+Status:
+Pending Assignment
+
+Bulk actions:
+
+Assign Selected
+
+Single action:
+
+Assign Classroom
+
+==================================================
+ASSIGN CLASSROOM MODAL
+==================================================
+
+Show:
+
+Student info
+
+Course info
+
+Available classrooms
+
+Each classroom card shows:
+
+- Current students
+- Capacity
+- Teacher
+- Schedule
+
+Button:
+
+Assign
+
+==================================================
+PAGE:
+Classroom Detail (Admin)
+==================================================
+
+Header:
+
+Classroom information
+
+Stats cards:
+
+- Total Students
+- Attendance Rate
+- Completion Rate
+- Upcoming Lessons
+
+Tabs:
+
+1. Students
+2. Lessons
+3. Materials
+4. Announcements
+5. Analytics
+
+==================================================
+STUDENTS TAB
+==================================================
+
+Table:
+
+Avatar
+Name
+Email
+Enroll Date
+Progress
+
+Actions:
+
+Remove
+Transfer Class
+
+==================================================
+TRANSFER CLASS MODAL
+==================================================
+
+Select destination classroom
+
+Confirm transfer
+
+==================================================
+ANALYTICS TAB
+==================================================
+
+Cards:
+
+- Student Count
+- Active Students
+- Completion %
+- Average Exam Score
+
+Charts:
+
+- Enrollment Growth
+- Attendance Trend
+- Progress Distribution
+
+==================================================
+PART 3 - TEACHER CLASSROOM VIEW
+==================================================
+
+Teacher can:
+
+- View assigned classrooms
+- Create announcements
+- Upload materials
+- Manage lesson sessions
+- View students
+- Track progress
+
+Dashboard cards:
+
+- Active Classrooms
+- Total Students
+- Upcoming Lessons
+
+==================================================
+UX REQUIREMENTS
+==================================================
+
+Provide:
+
+- Full page layouts
+- Component hierarchy
+- Responsive behavior
+- Empty states
+- Loading states
+- Error states
+- Modal designs
+- Table designs
+- Card designs
+- Navigation flow
+
+Generate UI at the quality level of a commercial SaaS LMS platform.
+
+Use the TRI ANH EDU orange + navy design system consistently across all screens.

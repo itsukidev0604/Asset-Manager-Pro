@@ -5,7 +5,7 @@ import {
   ClipboardList, ListOrdered, BarChart2, Users, ShieldCheck,
   Star, BookMarked, Tag, Settings, Activity, Bell, Search,
   LogOut, ChevronDown, Menu, X, GraduationCap, Moon, Sun,
-  ChevronRight,
+  ChevronRight, School, UserCog,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,6 +45,13 @@ const navGroups: NavGroup[] = [
       { icon: BookOpen, label: "Khóa học", href: "/admin/courses" },
       { icon: FolderOpen, label: "Danh mục khóa học", href: "/admin/categories" },
       { icon: FileText, label: "Bài học", href: "/admin/lessons" },
+    ],
+  },
+  {
+    label: "Lớp học",
+    items: [
+      { icon: School, label: "Quản lý lớp học", href: "/admin/classrooms" },
+      { icon: UserCog, label: "Hàng chờ xếp lớp", href: "/admin/enrollment-queue" },
     ],
   },
   {
@@ -97,6 +104,9 @@ const pageTitles: Record<string, { title: string; breadcrumb: string[] }> = {
   "/admin/users": { title: "Người dùng", breadcrumb: ["Dashboard", "Người dùng"] },
   "/admin/roles": { title: "Phân quyền", breadcrumb: ["Dashboard", "Phân quyền"] },
   "/admin/reviews": { title: "Đánh giá khóa học", breadcrumb: ["Dashboard", "Đánh giá"] },
+  "/admin/classrooms": { title: "Quản lý lớp học", breadcrumb: ["Dashboard", "Lớp học", "Danh sách"] },
+  "/admin/classrooms/create": { title: "Tạo lớp học mới", breadcrumb: ["Dashboard", "Lớp học", "Tạo mới"] },
+  "/admin/enrollment-queue": { title: "Hàng chờ xếp lớp", breadcrumb: ["Dashboard", "Lớp học", "Xếp lớp"] },
   "/admin/blog": { title: "Blog", breadcrumb: ["Dashboard", "Nội dung", "Blog"] },
   "/admin/blog-categories": { title: "Danh mục Blog", breadcrumb: ["Dashboard", "Nội dung", "Danh mục"] },
   "/admin/settings": { title: "Cài đặt hệ thống", breadcrumb: ["Dashboard", "Hệ thống", "Cài đặt"] },
